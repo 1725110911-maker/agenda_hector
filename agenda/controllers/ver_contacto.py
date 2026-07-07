@@ -23,7 +23,7 @@ class Ver_contacto:
                     'nombre': row[1],
                     'primer_apellido': row[2],
                     'segundo_apellido': row[3],
-                    'email': row[4],  # Verifica que el orden coincida con tus columnas en la BD
+                    'email': row[4],
                     'telefono': row[5]
                 }
                 return contacto # Regresa el diccionario directo
@@ -44,6 +44,3 @@ class Ver_contacto:
         print(f"ID_CONTACTO: {id_contacto}")
         contacto = self.buscarContacto(id_contacto)
         return render.ver_contacto(contacto)
-
-            
-                
