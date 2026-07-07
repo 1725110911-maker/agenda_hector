@@ -2,7 +2,7 @@ $def with(contactos)
 <h1> Bienvenidos a la agenda de contactos</h1>
 <button> <a href="/insertar_contacto">Nuevo contacto </a> </button><br><br>
 
-    <table class="table" align="center">
+    <table class="table" display: flex;>
     
         <tr>
             <th scope="col">ID</th>
@@ -21,10 +21,13 @@ $def with(contactos)
             <td>$contacto['segundo_apellido']</td>
             <td>$contacto['email']</td>
             <td>$contacto['telefono']</td>
-            <td> 
-                <button><a href="/ver_contacto/$contacto['id_contacto']">Ver </a> </button><br>
-                <button><a href="/editar_contacto/$contacto['id_contacto']">Editar </a> </button><br>
-                <button><a href="/borrar_contacto/$contacto['id_contacto']">Borrar </a> </button><br><br></td>
+            <td display: flex;> 
+                <a href="/ver_contacto/$contacto['id_contacto']" title="Ver detalle"> 
+                <span class="material-symbols-outlined" style="color: #2196F3;">visibility</span> </a>
+                <a href="/editar_contacto/$contacto['id_contacto']" title="Editar contacto"> 
+                <span class="material-symbols-outlined" style="color: #4CAF50;">edit</span> </a>
+                <a href="/borrar_contacto/$contacto['id_contacto']" title="Borrar contacto">  
+                <span class="material-symbols-outlined" style="color: #F44336;">delete</span> </a> <br> </td>
         </tr>
     </table>
 <button><a href="/">Regresar </a> </button><br><br></td>
