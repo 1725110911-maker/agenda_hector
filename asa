@@ -1,0 +1,53 @@
+$def with(contactos)
+<h1> Bienvenidos a la agenda de contactos</h1>
+<button> <a href="/insertar_contacto">Nuevo contacto </a> </button><br><br>
+
+    <table class="table" align="center">
+    
+        <tr class="table-info">
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Primero apellido</th>
+            <th scope="col">Segundo apellido</th>
+            <th scope="col">Email</th>
+            <th scope="col">Teléfono</th>
+            <th scope="col">Opciones</th>
+        </tr>
+            
+        <tr class="table-danger"> 
+            <th scope="row">1</th>
+            <td>Emiliano</td>
+            <td>Cruz</td>
+            <td>Ramírez</td>
+            <td>2dolector@gmail.com</td>
+            <td>7731544637</td>
+            <td>
+                <a href="/ver_contacto">Ver </a> </button><br>
+                <a href="/editar_contacto">Editar </a> </button><br>
+                <a href="/borrar_contacto">Borrar </a> </button><br><br></td>
+
+        </tr>
+
+        <tr class="table-warning"> 
+            <th scope="row">2</th>
+            <td>jonathan</td>
+            <td>Vargas</td>
+            <td>Hernández</td>
+            <td>jonathan@gmail.com</td>
+            <td>222222</td>
+            <td> 
+                <a href="/ver_contacto">Ver </a> </button><br>
+                <a href="/editar_contacto">Editar </a> </button><br>
+                <a href="/borrar_contacto">Borrar </a> </button><br><br></td>
+        </tr>
+
+        <tr class="table-warning"> 
+            <th scope="row">3</th>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+    </table>
+<button><a href="/">Regresar </a> </button><br><br></td>
