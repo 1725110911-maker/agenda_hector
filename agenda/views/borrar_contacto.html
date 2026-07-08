@@ -1,6 +1,19 @@
 $def with(contacto)
 <h1> ¿Estás seguro de borrar este contacto? </h1>
 <h4> Vas a borrar a: $contacto['nombre']</h4>
-
+<form method="POST" >
+    <label>ID:</label> 
+    <input type="text" readonly name="id_contacto", value="$contacto['id_contacto']"><br>
+    <label>Nombre:</label> 
+    <input type="text" readonly, name="nombre", value="$contacto['nombre']"><br>
+    <label>Primer nombre :</label> 
+    <input type="text" readonly, name="primer_apellido", value="$contacto['primer_apellido']"><br>
+    <label>Segundo nombre :</label> 
+    <input type="text" readonly, name="segundo_apellido", value="$contacto['segundo_apellido']"><br>
+    <label>Teléfono :</label> 
+    <input type="text" readonly, name="telefono", value="$contacto['telefono']"><br>
+    <label>Email :</label> 
+    <input type="text" readonly, name="email", value="$contacto['email']"><br>
+</form>
 <button> <a href="/lista_contacto">Cancelar </a> </button>
 <button> <a href="/lista_contacto">Borrar </a> </button>

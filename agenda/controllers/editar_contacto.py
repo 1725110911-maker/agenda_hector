@@ -5,6 +5,43 @@ render = web.template.render('views', base='layout')
 
 class Editar_contacto:
 
+    def actualizarContacto(self, contacto:dict)->bool:
+        try:
+            conn = sqlite3.connect('sql/agenda.db')
+            cursor = conn.cursor()
+            
+            # Consulta el registro de la tabla contactos
+            query = """
+            UPDATE contactos
+            SET nombre = ?,
+                primer_apellido = ?,
+                segundo_apellido = ?,
+                email = ?,
+                telefono = ?
+            WHERE id_contacto = ?;
+
+            """
+            datos = (contacto['nombre'],
+                     contacto['primer_apellido'],
+                     contacto['segundo_apellido'],
+                     contacto['email'],
+                     contacto['telefono'],
+                     contacto['id_contacto'],
+                
+            )
+            cursor.execute(query, (datos))
+            conn.commit()
+            return True
+        except sqlite3.Error as error:
+            print(f"ERROR 102: {error.args}")
+            return False
+        except Exception as error:
+            print(f"ERROR 103: {error.args}")
+            return False
+        finally:
+            if conn:
+                conn.close()
+
     def editarContacto(self, id_contacto):
         try:
             # Conecta a la base de datos
@@ -44,3 +81,16 @@ class Editar_contacto:
         print(f"ID_CONTACTO: {id_contacto}")
         contacto = self.editarContacto(id_contacto)
         return render.editar_contacto(contacto)
+    
+    def POST(self, id_contacto):
+        formulario = web.input()
+        contacto = {
+            "id_contacto": formulario["id_contacto"],
+            "nombre": formulario["nombre"],
+            "primer_apellido": formulario["primer_apellido"],
+            "segundo_apellido": formulario["segundo_apellido"],
+            "email": formulario["email"],
+            "telefono": formulario["telefono"],
+        }
+        resultado = self.actualizarContacto(contacto)
+        return resultado
