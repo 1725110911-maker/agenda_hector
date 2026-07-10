@@ -7,7 +7,7 @@ urls = (
     '/insertar_contacto', 'controllers.insertar_contacto.Insertar_contacto',
     '/editar_contacto/(\d+)', 'controllers.editar_contacto.Editar_contacto',
     '/borrar_contacto/(\d+)', 'controllers.borrar_contacto.Borrar_contacto',
-    '/borrar_bd', 'controllers.borrar_bd.borrar_bd'
+    '/vaciar_bd', 'controllers.vaciar_bd.Vaciar_bd'
 )
 
 app = web.application(urls, globals())
